@@ -1,0 +1,100 @@
+[gd_scene load_steps=2 format=3 uid="uid://bh3pf2ux8ybnf"]
+
+[ext_resource type="Script" path="res://UI.gd" id="1_vjmyb"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_vjmyb")
+
+[node name="WaveInfo" type="VBoxContainer" parent="."]
+layout_mode = 0
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -60.0
+offset_right = 200.0
+offset_bottom = -10.0
+
+[node name="WaveLabel" type="Label" parent="WaveInfo"]
+layout_mode = 2
+text = "Wave: 1"
+
+[node name="ZombiesLabel" type="Label" parent="WaveInfo"]
+layout_mode = 2
+text = "Zombies: 5"
+
+[node name="PlayerInfo" type="VBoxContainer" parent="."]
+layout_mode = 0
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -80.0
+offset_right = -10.0
+offset_bottom = -10.0
+
+[node name="HealthLabel" type="Label" parent="PlayerInfo"]
+layout_mode = 2
+text = "Health: 100/100"
+
+[node name="HealthBar" type="ProgressBar" parent="PlayerInfo"]
+layout_mode = 2
+max_value = 100.0
+value = 100.0
+
+[node name="AmmoLabel" type="Label" parent="PlayerInfo"]
+layout_mode = 2
+text = "Ammo: 30/30"
+
+[node name="WaveMessage" type="Label" parent="."]
+layout_mode = 0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -50.0
+offset_right = 100.0
+offset_bottom = 50.0
+text = "Wave 1 Starting!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameOverPanel" type="Panel" parent="."]
+layout_mode = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.8)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOverPanel"]
+layout_mode = 0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -50.0
+offset_right = 100.0
+offset_bottom = 50.0
+
+[node name="GameOverLabel" type="Label" parent="GameOverPanel/VBoxContainer"]
+layout_mode = 2
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="GameOverPanel/VBoxContainer"]
+layout_mode = 2
+text = "Restart"
+
+[node name="QuitButton" type="Button" parent="GameOverPanel/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
